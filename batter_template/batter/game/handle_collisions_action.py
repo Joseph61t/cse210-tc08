@@ -16,7 +16,7 @@ class HandleCollisionsAction(Action):
             cast (dict): The game actors {key: tag, value: list}.
         """
         marquee = cast["marquee"][0] # there's only one
-        robot = cast["robot"][0] # there's only one
+        bat = cast["bat"][0] # there's only one
         artifacts = cast["artifact"]
         marquee.set_text("")
         for artifact in artifacts:
