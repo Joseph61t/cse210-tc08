@@ -15,11 +15,15 @@ class HandleCollisionsAction(Action):
         Args:
             cast (dict): The game actors {key: tag, value: list}.
         """
-        marquee = cast["marquee"][0] # there's only one
-        robot = cast["robot"][0] # there's only one
-        artifacts = cast["artifact"]
-        marquee.set_text("")
-        for artifact in artifacts:
-            if robot.get_position().equals(artifact.get_position()):
-                description = artifact.get_description()
-                marquee.set_text(description) 
+
+        # TODO: We need to adjust collisions to be for when perserving velocity 
+        # code below can be reused when checking if something ends up in the same space
+
+        # marquee = cast["marquee"][0] # there's only one
+        # robot = cast["robot"][0] # there's only one
+        # artifacts = cast["artifact"]
+        # marquee.set_text("")
+        # for artifact in artifacts:
+        #     if robot.get_position().equals(artifact.get_position()):
+        #         description = artifact.get_description()
+        #         marquee.set_text(description) 
