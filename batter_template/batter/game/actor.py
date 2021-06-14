@@ -23,10 +23,10 @@ class Actor:
         self._velocity = Point(0, 0)
 
     def get_description(self):
-        """Gets the artifact's description.
+        """Gets the actor's description.
         
         Returns:
-            string: The artifact's description.
+            string: The actor's description.
         """
         return self._description 
 

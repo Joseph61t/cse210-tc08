@@ -40,4 +40,4 @@ root                    (project root folder)
 ## Authors
 ---
 * # Hunter Powell- pow16007@byui.edu
-
+* # Joseph Hampton- ham17009@byui.edu
