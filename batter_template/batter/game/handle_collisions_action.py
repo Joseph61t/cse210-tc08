@@ -20,6 +20,6 @@ class HandleCollisionsAction(Action):
         artifacts = cast["artifact"]
         marquee.set_text("")
         for artifact in artifacts:
-            if robot.get_position().equals(artifact.get_position()):
+            if bat.get_position().equals(artifact.get_position()):
                 description = artifact.get_description()
                 marquee.set_text(description) 
