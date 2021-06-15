@@ -32,13 +32,27 @@ class MoveActorsAction(Action):
         Args:
             actor (Actor): The actor to move.
         """
+
         position = actor.get_position()
         velocity = actor.get_velocity()
-        x1 = position.get_x()
-        y1 = position.get_y()
-        x2 = velocity.get_x()
-        y2 = velocity.get_y()
-        x = 1 + (x1 + x2 - 1) % (constants.MAX_X - 1)
-        y = 1 + (y1 + y2 - 1) % (constants.MAX_Y - 1)
-        position = Point(x, y)
+        x_pos = position.get_x()
+        y_pos = position.get_y()
+        x_vel = velocity.get_x()
+        y_vel = velocity.get_y()
+
+        if self.actor == "paddle":
+
+            if actor.position.get_x() >= constants.MAX_X - 11 and actor.get_velocity().get_x() > 0:    #paddle width is 11 
+
+                x_vel = 0
+
+            elif actor.position.get_x() <= 0 and actor.get_velocity().get_x() < 0:
+
+               x_vel = 0
+
+        x_new = (x_pos + x_vel )
+        y_new = (y_pos + y_vel ) 
+        position = Point(x_new, y_new)
         actor.set_position(position)
+
+    
