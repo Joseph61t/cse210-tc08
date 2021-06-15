@@ -18,7 +18,7 @@ def main(screen):
 
     x = int(constants.MAX_X / 2)
     y = int(constants.MAX_Y - 1)
-    position = Point(x, y)
+    position = Point(10, 20)
     paddle = Actor()
     paddle.set_text("===========")
     paddle.set_position(position)

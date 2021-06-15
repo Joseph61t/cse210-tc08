@@ -1,5 +1,7 @@
 from time import sleep
 from game import constants
+from game.actor import Actor
+from game.point import Point
 
 class Director:
     """A code template for a person who directs the game. The responsibility of 
