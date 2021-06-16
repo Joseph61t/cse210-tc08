@@ -30,13 +30,13 @@ class HandleCollisionsAction(Action):
         y = paddle.get_position().get_y()
         fullPaddle = []
         for x in range(firstX, lastX):
-            point = Point(x,y)
+            point = (x,y)
             fullPaddle.append(point)
         
         # The if statments that govern when the ball hits the paddle
         for x in fullPaddle:
-            pos_x = x.get_position().get_x()
-            pos_y = x.get_position().get_y()
+            pos_x = x[0]
+            pos_y = x[1]
             if ball.get_position().get_y() + 1 == pos_y and ball.get_position().get_x() == pos_x:
                     point = Point(ball.get_x(), (ball.get_y() * -1))
                     ball.set_velocity(point)
