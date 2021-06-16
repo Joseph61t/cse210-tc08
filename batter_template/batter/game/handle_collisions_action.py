@@ -1,4 +1,4 @@
-from batter_template.batter.game import point
+from game import point
 import random
 from game import constants
 from game.action import Action
@@ -26,18 +26,18 @@ class HandleCollisionsAction(Action):
 
         # the if statements the cover when a ball hits a brick
         # covers if the ball hits a brick from bellow
-        if ball.get_y(ball.get_position()) - 1 == brick.get_y(ball.get_position()) and ball.get_x(ball.get_position()) == brick.get_x(ball.get_position()):
+        if ball.get_position().get_y() - 1 == brick.get_position().get_y() and ball.get_position().get_x() == brick.get_position().get_x():
             point = Point(ball.get_x(), (ball.get_y() * -1))
             ball.set_velocity(point)
         # covers if the ball hits a brick from above
-        if ball.get_y(ball.get_position()) + 1 == brick.get_y(ball.get_position()) and ball.get_x(ball.get_position()) == brick.get_x(ball.get_position()):
+        if ball.get_position().get_y() + 1 == brick.get_position().get_y() and ball.get_position().get_x() == brick.get_position().get_x():
             point = Point(ball.get_x(), (ball.get_y() * -1))
             ball.set_velocity(point)
         # covers if the ball hits a brick from the left
-        if ball.get_x(ball.get_position()) - 1 == brick.get_x(ball.get_position()) and ball.get_y(ball.get_position()) == brick.get_y(ball.get_position()):
+        if ball.get_position().get_x() - 1 == brick.get_position().get_x() and ball.get_position().get_y() == brick.get_position().get_y():
             point = Point((ball.get_x() * -1), ball.get_y())
             ball.set_velocity(point) 
         # covers if the ball hits a brick from the right
-        if ball.get_x(ball.get_position()) + 1 == brick.get_x(ball.get_position()) and ball.get_y(ball.get_position()) == brick.get_y(ball.get_position()):
+        if ball.get_position().get_x() + 1 == brick.get_position().get_x() and ball.get_position().get_y() == brick.get_position().get_y():
             point = Point((ball.get_x() * -1), ball.get_y())
             ball.set_velocity(point)
