@@ -19,14 +19,28 @@ class HandleCollisionsAction(Action):
             cast (dict): The game actors {key: tag, value: list}.
         """
         ball = cast["ball"][0] # there's only one
-        bricks = cast["bricks"] # there's only one
+        bricks = cast["bricks"]
+        paddle = cast["paddle"][0]
         # artifacts = cast["artifact"]
         #brick.set_text("")
         #for artifact in artifacts:
-
-        if ball.get_position().get_x == MAX_X:
-            point = Point((ball.get_velocity().get_x() * -1), ball.get_velocity().get_y())
-            ball.set_velocity(point) 
+        
+        # Setting up the paddle points
+        firstX = paddle.get_position().get_x()
+        lastX = firstX + 11
+        y = paddle.get_position().get_y()
+        fullPaddle = []
+        for x in range(firstX, lastX):
+            point = Point(x,y)
+            fullPaddle.append(point)
+        
+        # The if statments that govern when the ball hits the paddle
+        for x in fullPaddle:
+            pos_x = x.get_position().get_x()
+            pos_y = x.get_position().get_y()
+            if ball.get_position().get_y() + 1 == pos_y and ball.get_position().get_x() == pos_x:
+                    point = Point(ball.get_x(), (ball.get_y() * -1))
+                    ball.set_velocity(point)
 
         # the if statements the cover when a ball hits a brick
         # covers if the ball hits a brick from bellow
