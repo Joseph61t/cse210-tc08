@@ -18,9 +18,9 @@ class HandleCollisionsAction(Action):
             cast (dict): The game actors {key: tag, value: list}.
         """
         ball = cast["ball"][0] # there's only one
-        brick = cast["brick"][0] # there's only one
+        bricks = cast["bricks"] # there's only one
         # artifacts = cast["artifact"]
-        brick.set_text("")
+        #brick.set_text("")
         #for artifact in artifacts:
 
 
