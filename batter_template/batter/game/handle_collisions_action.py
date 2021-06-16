@@ -50,15 +50,26 @@ class HandleCollisionsAction(Action):
             if ball.get_position().get_y() - 1 == brick.get_position().get_y() and ball.get_position().get_x() == brick.get_position().get_x():
                 point = Point(ball.get_velocity().get_x(), (ball.get_velocity().get_y() * -1))
                 ball.set_velocity(point)
+                
+                brick.set_position(1000, 1000)
+                
             # covers if the ball hits a brick from above
             if ball.get_position().get_y() + 1 == brick.get_position().get_y() and ball.get_position().get_x() == brick.get_position().get_x():
                 point = Point(ball.get_velocity().get_x(), (ball.get_velocity().get_y() * -1))
                 ball.set_velocity(point)
+                
+                brick.set_position(1000, 1000)
+                
             # covers if the ball hits a brick from the left
             if ball.get_position().get_x() - 1 == brick.get_position().get_x() and ball.get_position().get_y() == brick.get_position().get_y():
                 point = Point((ball.get_velocity().get_x() * -1), ball.get_velocity().get_y())
                 ball.set_velocity(point) 
+                
+                brick.set_position(1000, 1000)
+                
             # covers if the ball hits a brick from the right
             if ball.get_position().get_x() + 1 == brick.get_position().get_x() and ball.get_position().get_y() == brick.get_position().get_y():
                 point = Point((ball.get_velocity().get_x() * -1), ball.get_velocity().get_y())
                 ball.set_velocity(point)
+                
+                brick.set_position(1000, 1000)
