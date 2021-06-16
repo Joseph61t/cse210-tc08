@@ -21,10 +21,12 @@ class HandleCollisionsAction(Action):
         ball = cast["ball"][0] # there's only one
         bricks = cast["bricks"]
         paddle = cast["paddle"][0]
-        # artifacts = cast["artifact"]
-        #brick.set_text("")
-        #for artifact in artifacts:
-        
+
+        #set up colliding with walls
+        if ball.get_position().get_x() - 1 == MAX_X:
+            point = Point((ball.get_velocity().get_x() * -1), ball.get_velocity().get_y())
+            ball.set_velocity(point) 
+
         # Setting up the paddle points
         firstX = paddle.get_position().get_x()
         lastX = firstX + 11
