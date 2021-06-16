@@ -18,7 +18,7 @@ def main(screen):
 
     x = int(constants.MAX_X / 2)
     y = int(constants.MAX_Y - 1)
-    position = Point(20, 19)
+    position = Point(40, 19)
     paddle = Actor()
     paddle.set_text("===========")
     paddle.set_position(position)
@@ -35,7 +35,8 @@ def main(screen):
 
     x = int(constants.MAX_X / 2)
     y = int(constants.MAX_Y / 2)
-    position = Point(x, y)
+    #position = Point(x, y)
+    position = Point(70, y)
     velocity = Point(1, -1)
     ball = Actor()
     ball.set_text("@")
