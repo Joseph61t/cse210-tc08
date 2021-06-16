@@ -40,13 +40,13 @@ class MoveActorsAction(Action):
         x_vel = velocity.get_x()
         y_vel = velocity.get_y()
 
-        if actor == "paddle":
-
-            if actor.position.get_x() >= constants.MAX_X - 11 and actor.get_velocity().get_x() > 0:    #paddle width is 11 
+        if actor.get_description() == "paddle":
+            x_vel *= 3
+            if actor.get_position().get_x() >= constants.MAX_X - 11 and actor.get_velocity().get_x() > 0:    #paddle width is 11 
 
                 x_vel = 0
 
-            elif actor.position.get_x() <= 0 and actor.get_velocity().get_x() < 0:
+            elif actor.get_position().get_x() <= 0 and actor.get_velocity().get_x() < 0:
 
                x_vel = 0
 

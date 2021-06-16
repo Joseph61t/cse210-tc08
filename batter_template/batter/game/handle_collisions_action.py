@@ -26,11 +26,19 @@ class HandleCollisionsAction(Action):
         #set up colliding with walls
         if ball.get_position().get_x() - 1 == MAX_X:
             point = Point((ball.get_velocity().get_x() * -1), ball.get_velocity().get_y())
-            ball.set_velocity(point) 
+            ball.set_velocity(point)
+        if ball.get_position().get_x() + 1 == 0:
+            point = Point((ball.get_velocity().get_x() * -1), ball.get_velocity().get_y())
+            ball.set_velocity(point)
+        if ball.get_position().get_y() - 1 == 0:
+            point = Point(ball.get_velocity().get_x(), (ball.get_velocity().get_y() * -1))
+            ball.set_velocity(point)
+            
+             
 
         # Setting up the paddle points
         firstX = paddle.get_position().get_x()
-        lastX = firstX + 11
+        lastX = firstX + 12
         y = paddle.get_position().get_y()
         fullPaddle = []
         for x in range(firstX, lastX):
@@ -42,7 +50,7 @@ class HandleCollisionsAction(Action):
             pos_x = x[0]
             pos_y = x[1]
             if ball.get_position().get_y() + 1 == pos_y and ball.get_position().get_x() == pos_x:
-                    point = Point(ball.get_x(), (ball.get_y() * -1))
+                    point = Point(ball.get_velocity().get_x(), (ball.get_velocity().get_y() * -1))
                     ball.set_velocity(point)
 
         # the if statements the cover when a ball hits a brick
