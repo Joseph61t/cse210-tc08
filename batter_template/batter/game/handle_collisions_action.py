@@ -26,18 +26,18 @@ class HandleCollisionsAction(Action):
 
         # the if statements the cover when a ball hits a brick
         # covers if the ball hits a brick from bellow
-        if ball.get_y(ball.get_position()) - 1 == brick.get_y(ball.get_position() and ball.get_x(ball.get_position()) == brick.get_x(ball.get_position()):
-            point = Point(ball.set_x(), (ball.set_y() * -1))
+        if ball.get_y(ball.get_position()) - 1 == brick.get_y(ball.get_position()) and ball.get_x(ball.get_position()) == brick.get_x(ball.get_position()):
+            point = Point(ball.get_x(), (ball.get_y() * -1))
             ball.set_velocity(point)
         # covers if the ball hits a brick from above
-        if ball.get_y(ball.get_position()) + 1 == brick.get_y(ball.get_position() and ball.get_x(ball.get_position()) == brick.get_x(ball.get_position()):
-            point = Point(ball.set_x(), (ball.set_y() * -1))
+        if ball.get_y(ball.get_position()) + 1 == brick.get_y(ball.get_position()) and ball.get_x(ball.get_position()) == brick.get_x(ball.get_position()):
+            point = Point(ball.get_x(), (ball.get_y() * -1))
             ball.set_velocity(point)
         # covers if the ball hits a brick from the left
-        if ball.get_x(ball.get_position()) - 1 == brick.get_x(ball.get_position() and ball.get_y(ball.get_position()) == brick.get_y(ball.get_position()):
-            point = Point((ball.set_x() * -1), ball.set_y())
+        if ball.get_x(ball.get_position()) - 1 == brick.get_x(ball.get_position()) and ball.get_y(ball.get_position()) == brick.get_y(ball.get_position()):
+            point = Point((ball.get_x() * -1), ball.get_y())
             ball.set_velocity(point) 
         # covers if the ball hits a brick from the right
-        if ball.get_x(ball.get_position()) + 1 == brick.get_x(ball.get_position() and ball.get_y(ball.get_position()) == brick.get_y(ball.get_position()):
-            point = Point((ball.set_x() * -1), ball.set_y())
+        if ball.get_x(ball.get_position()) + 1 == brick.get_x(ball.get_position()) and ball.get_y(ball.get_position()) == brick.get_y(ball.get_position()):
+            point = Point((ball.get_x() * -1), ball.get_y())
             ball.set_velocity(point)
