@@ -1,10 +1,11 @@
 from game.constants import MAX_X
+from game.constants import MAX_Y
 from game import point
 import random
 from game import constants
 from game.action import Action
 from game.point import Point
-
+import sys
 class HandleCollisionsAction(Action):
     """A code template for handling collisions. The responsibility of this class of objects is to update the game state when actors collide.
     
@@ -76,3 +77,5 @@ class HandleCollisionsAction(Action):
                 ball.set_velocity(point)
                 
                 brick.set_position(void)
+        if ball.get_position().get_y() == MAX_Y:
+            sys.exit()
